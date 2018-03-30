@@ -88,7 +88,7 @@ def model_save(fn):
 def model_load(fn):
     global model, criterion, optimizer
     with open(fn, 'rb') as f:
-        model, criterion, optimizer = torch.load(f)
+        model, criterion, optimizer = torch.load(f, map_location='cpu')
 
 import os
 import hashlib
